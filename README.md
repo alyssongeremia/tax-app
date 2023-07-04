@@ -1,2 +1,3 @@
 # tax-app
- Aplicação web para calcular impostos de produtos
+
+## Projeto pessoal para auxiliar a calcular as taxas de impostos dos produtos adquiridos
