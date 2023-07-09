@@ -201,10 +201,12 @@ form button:hover {
     align-items: center;
 
     transition: all 200ms ease-in-out;
+    cursor: none;
 }
 
 .container-messages button:hover {
     transform: scale(1.05);
+    cursor: copy;
 }
 
 dialog {
@@ -261,9 +263,5 @@ dialog h1 {
         gap: 3.5rem;
 
         padding: 0 0 1.6rem;
-    }
-
-    .arrow-right {
-        display: none;
     }
 }
