@@ -1,10 +1,12 @@
 :root {
-    --bg-body: #121214;
-    --bg-header: #0E0E10;
-    --bg-button: #0197F6;
-    --bg-input: #E7E7E8;
+    --bg-body: #1C1B1E;
+    --bg-300: #25242A;
+    --bg-button: #6665DD;
+    --bg-input: #E8E8E9;
+    --bg-hover: #5c5bc7;
 
-    --color-text: #89898A;
+    --color-text-200: #e9e9ea;
+    --color-text-300: #bbbbbc;
     --color-text-blue: #0197F6;
     --color-text-logo: #FFFFFF;
 
@@ -23,67 +25,48 @@
 }
 
 body {
-    height: 100vh;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-family: 'Poppins', sans-serif;
     background: var(--bg-body);
     -webkit-font-smoothing: antialiased;
 
-    position: relative;
+    display: grid;
+    justify-items: center;
 }
 
 header {
-    height: 7.5rem;
+    height: 5.6rem;
 
-    background: var(--bg-header);
+    margin-top: 8rem;
+    background: var(--bg-300);
+    border-radius: 32px;
 
-    display: flex;
-
-    color: var(--bg-input);
-}
-
-header .container {
+    padding: 0 1.8rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+}
+
+header span {
+    font-size: 1.4rem;
+    color: var(--color-text-300);
+    display: flex;
+    align-items: center;
 }
 
 header a {
     text-decoration: none;
+    font-size: 1.3rem;
+    color: #e9e9ea;
+    background: #212026;
+    padding: .4rem .8rem;
+
+    margin-left: .8rem;
+
+    border-radius: 8px;
 }
 
-#logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: .5rem;
-
-    color: var(--color-text-logo);
-}
-
-#logo h1 {
-    font-size: 1.6rem;
-    font-weight: normal;
-}
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: .4rem;
-    background: #2a2a2c;
-
-    padding: .3rem .4rem;
-    border-radius: .5rem;
-
-    transition: all 200ms ease-in-out;
-}
-
-.brand:hover {
-    background: #4BA3C3;
-}
-
-.brand span {
-    font-size: 1.4rem;
+header a:hover {
+    border: 1px solid var(--bg-button);
 }
 
 .hidden {
@@ -91,25 +74,25 @@ header a {
 }
 
 main {
-    color: var(--color-text);
-
-    padding-top: 3.5rem;
-    margin: auto;
+    color: var(--color-text-200);
+    padding-top: 8rem;
 }
 
 main .container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
 }
 
 form {
-    max-width: 34rem;
-    
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    align-items: center;
+}
+
+:focus {
+    outline: transparent;
+    box-shadow: 0 0 0 2px var(--bg-button);
 }
 
 input::placeholder {
@@ -119,95 +102,128 @@ input::placeholder {
 select {
     background: var(--bg-input);
 
-    padding: 1rem;
-
-    margin-top: 1.6rem;
-    border-radius: 5px;
+    padding: 1.2rem .8rem;
+    border-radius: 8px;
 
     cursor: pointer;
 }
 
 form input {
     height: 4.8rem;
-    width: 100%;
+    width: 21.5rem;
     border-radius: 5px;
     background: var(--bg-input);
 
     border: none;
     padding: 0 1.2rem;
 
-    margin-top: 1.6rem;
+    margin-top: .8rem;
     outline-color: var(--bg-button);
+}
+
+#taxes {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
 }
 
 button {
     height: 5rem;
     background: var(--bg-button);
     font-family: 'Poppins';
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 500;
     color: var(--bg-header);
 
-    border-radius: 5px;
+    border-radius: 8px;
 
     border: none;
     cursor: pointer;
 
-    transition: all 300ms ease-in-out;
+    transition: all 200ms ease-in-out;
 }
 
-form button:hover {
-    background: #0188dd;
+.calculator button {
+    width: 17rem;
+}
+
+.calculator button:hover {
+    background: var(--bg-hover);
+}
+
+.calculator {
+    width: 94rem;
+
+    background: var(--bg-300);
+
+    padding: 1.6rem;
+
+    border-radius: 1.6rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 17rem;
+    align-items: end;
+
+    margin-top: 4.8rem;
 }
 
 .container-messages {
-    width: 34rem;
-}
-
-.container-messages h1 {
-    font-size: 1.8rem;
-    font-weight: normal;
-    padding: 1.6rem 0 1.6rem;
-}
-
-.container-messages h1:nth-child(1) {
-    padding-top: 0;
-}
-
-.container-messages div {
-    width: 100%;
-    height: 5rem;
-
-    background-color: var(--bg-input);
-    padding-left: 1.6rem;
-    border-radius: 5px;
+    width: 64rem;
+    background: var(--bg-300);
+    padding: 1.6rem;
+    border-radius: 1.6rem;
+    margin-top: 4.8rem;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.container-messages span {
-    font-size: 1.6rem;
-    color: #373737;
+#new-value {
+    width: 29rem;
+    background: var(--bg-input);
+    border-radius: 8px;
+    padding-left: 1.2rem;
+    margin-top: .8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#message {
+    width: 29rem;
+    background: var(--bg-input);
+    border-radius: 8px;
+    padding-left: 1.2rem;
+    margin-top: .8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#new-value, #message span {
+    font-size: 1.4rem;
+    color: var(--bg-body);
 }
 
 .container-messages button {
-    font-size: 1.6rem;
-    border-radius: 0 5px 5px 0;
-    padding: 0 10px;
-
+    width: 45px;
     display: flex;
     align-items: center;
+    justify-content: center;
 
-    transition: all 200ms ease-in-out;
-    cursor: none;
+    border-radius: 0 8px 8px 0;
 }
 
 .container-messages button:hover {
-    transform: scale(1.05);
     cursor: copy;
+    transform: scale(1.07);
 }
+
+.ph-clipboard {
+    color: var(--bg-input);
+    font-size: 2.4rem;
+}
+
 
 dialog {
     width: 15rem;
@@ -234,9 +250,14 @@ dialog {
     animation: toTop 600ms ease-in-out;
 }
 
-dialog h1 {
+.ph-check-circle {
+    font-size: 2.2rem;
+    color: var(--bg-input);
+}
+
+dialog span {
     font-size: 1.4rem;
-    color: var(--bg-header);
+    color: var(--bg-input);
     font-weight: 600;
 }
 
