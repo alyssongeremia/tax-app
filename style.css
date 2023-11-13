@@ -1,9 +1,10 @@
 :root {
-    --bg-body: #1C1B1E;
+    --bg-body: #161618;
     --bg-300: #25242A;
-    --bg-button: #6665DD;
+    --bg-button: #5c5bc7;
+    --bg-button-400: #19181b;
     --bg-input: #E8E8E9;
-    --bg-hover: #5c5bc7;
+    --bg-hover: #5251b1;
 
     --color-text-200: #e9e9ea;
     --color-text-300: #bbbbbc;
@@ -20,7 +21,6 @@
 }
 
 .page {
-    width: 1024px;
     margin: auto;
 }
 
@@ -37,7 +37,7 @@ body {
 header {
     height: 5.6rem;
 
-    margin-top: 8rem;
+    margin: 3.2rem 0;
     background: var(--bg-300);
     border-radius: 32px;
 
@@ -57,7 +57,7 @@ header a {
     text-decoration: none;
     font-size: 1.3rem;
     color: #e9e9ea;
-    background: #212026;
+    background: var(--bg-button-400);
     padding: .4rem .8rem;
 
     margin-left: .8rem;
@@ -66,7 +66,7 @@ header a {
 }
 
 header a:hover {
-    border: 1px solid var(--bg-button);
+    box-shadow: 0 0 0 1px var(--bg-button);
 }
 
 .hidden {
@@ -75,24 +75,38 @@ header a:hover {
 
 main {
     color: var(--color-text-200);
-    padding-top: 8rem;
 }
 
 main .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-areas: 
+    "A A"
+    "B C"
+    "B D"
+    "E E";
+    align-items: start;
+    column-gap: 4rem;
 }
 
 form {
+    display: grid;
+}
+
+label {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    gap: .2rem;
+}
+
+form .ph-percent {
+    font-size: 1.6rem;
+    color: var(--bg-button);
+    margin-top: 3px;
 }
 
 :focus {
     outline: transparent;
-    box-shadow: 0 0 0 2px var(--bg-button);
+    box-shadow: 0 0 0 3px var(--bg-button);
 }
 
 input::placeholder {
@@ -110,8 +124,8 @@ select {
 
 form input {
     height: 4.8rem;
-    width: 21.5rem;
     border-radius: 5px;
+    font-size: 1.6rem;
     background: var(--bg-input);
 
     border: none;
@@ -124,7 +138,10 @@ form input {
 #taxes {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1.6rem;
+    grid-area: A;
+    margin-bottom: 3.2rem;
 }
 
 button {
@@ -143,44 +160,47 @@ button {
     transition: all 200ms ease-in-out;
 }
 
-.calculator button {
-    width: 17rem;
-}
-
 .calculator button:hover {
     background: var(--bg-hover);
 }
 
 .calculator {
-    width: 94rem;
-
+    width: 32rem;
     background: var(--bg-300);
 
     padding: 1.6rem;
 
     border-radius: 1.6rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 17rem;
-    align-items: end;
 
-    margin-top: 4.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+
+    grid-area: B;
+}
+
+.calculator div {
+    display: flex;
+    flex-direction: column;
 }
 
 .container-messages {
-    width: 64rem;
+    width: max-content;
     background: var(--bg-300);
     padding: 1.6rem;
     border-radius: 1.6rem;
-    margin-top: 4.8rem;
 
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 1.6rem;
+
+    grid-area: C;
+    margin-bottom: 2.4rem;
 }
 
 #new-value {
     width: 29rem;
-    background: var(--bg-input);
+    background: linear-gradient(90deg, rgba(232,232,233,1) 97%, rgba(92,91,199,1) 98%);
     border-radius: 8px;
     padding-left: 1.2rem;
     margin-top: .8rem;
@@ -191,7 +211,7 @@ button {
 
 #message {
     width: 29rem;
-    background: var(--bg-input);
+    background: linear-gradient(90deg, rgba(232,232,233,1) 97%, rgba(92,91,199,1) 98%);
     border-radius: 8px;
     padding-left: 1.2rem;
     margin-top: .8rem;
@@ -205,6 +225,10 @@ button {
     color: var(--bg-body);
 }
 
+.card-messages span:nth-child(1) {
+    font-size: 1.4rem;
+}
+
 .container-messages button {
     width: 45px;
     display: flex;
@@ -216,12 +240,44 @@ button {
 
 .container-messages button:hover {
     cursor: copy;
-    transform: scale(1.07);
+    width: 50px;
 }
 
 .ph-clipboard {
     color: var(--bg-input);
     font-size: 2.4rem;
+}
+
+.container-actions {
+    max-width: 32.2rem;
+    background: var(--bg-300);
+    border-radius: 16px;
+    padding: 1.6rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+
+    grid-area: D;
+}
+
+.container-actions button {
+    height: 4rem;
+    background: var(--bg-button-400);
+    color: var(--color-text-200);
+    font-size: 1.3rem;
+    padding: 0 .8rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+
+    transition: all 10ms;
+}
+
+.container-actions button:hover {
+    border: 1px solid var(--bg-button);
 }
 
 
@@ -261,6 +317,34 @@ dialog span {
     font-weight: 600;
 }
 
+.console {
+    margin-top: 2.4rem;
+    background: var(--bg-300);
+    border-radius: 16px;
+    width: 100%;
+    padding: 1.6rem;
+    grid-area: E;
+    margin-bottom: 3.2rem;
+}
+
+.title-console {
+    color: var(--color-text-300);
+    font-size: 1.6rem;
+    font-weight: 400;
+
+    display: flex;
+    gap: .4rem;
+    align-items: center;
+}
+
+.values-console {
+    padding: 1rem 0 0 2.4rem;
+}
+
+.console span {
+    font-size: 1.4rem;
+}
+
 @keyframes toTop {
     0% {
         opacity: 0;
@@ -273,13 +357,10 @@ dialog span {
     }
 }
 
-@media(max-width: 425px) {
-
-    .page {
-        width: 400px;
-    }
+@media(max-width: 1000px) {
 
     main .container {
+        display: flex;
         flex-direction: column;
         gap: 3.5rem;
 

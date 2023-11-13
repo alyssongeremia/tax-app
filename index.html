@@ -24,28 +24,32 @@
 
     <main>
         <div class="container page">
-            <form>
-                <div id="taxes">
-                    <label for="type-impost">Selecione o tipo de imposto</label>
-                    <select id="type-impost">
-                        <option value="ipi">IPI</option>
-                        <option value="icms-st">ST</option>
-                        <option value="frete">Frete</option>
-                    </select>
-                </div>
 
+            <div id="taxes">
+                <label for="type-impost">Selecione o tipo de imposto</label>
+                <select id="type-impost">
+                    <option value="ipi">IPI</option>
+                    <option value="icms-st">ST</option>
+                    <option value="frete">Frete</option>
+                </select>
+            </div>
+            <form>
                 <div class="calculator">
                     <div>
-                        <label for="note-value">Valor total na Sefaz</label>
-                        <input id="note-value" type="number" placeholder="Valor total de ipi ou st">
+                        <label for="note-value">Valor total na NF / Sefaz</label>
+                        <input id="note-value" type="number" placeholder="Valor total de ipi, st ou frete">
                     </div>
                     <div>
-                        <label for="amount-acquired">N° de Itens</label>
+                        <label for="amount-acquired">Quantidade de itens</label>
                         <input id="amount-acquired" type="number" placeholder="Quantia presente na nota">
                     </div>
                     <div>
                         <label for="last-cost">Último custo do produto</label>
                         <input id="last-cost" type="number" placeholder="Último custo no sistema">
+                    </div>
+                    <div>
+                        <label for="margin">Margem de venda <span><i class="ph ph-percent"></i></span></label>
+                        <input id="margin" type="number" placeholder="45" value="45">
                     </div>
                     <button type="submit" class="send-values" title="Calcular">
                         Calcular
@@ -53,27 +57,59 @@
                 </div>
             </form>
 
-            <div class="container-messages">
-                <div class="card-messages">
-                    <span>Novo valor de custo</span>
-                        <div id="new-value">
-                            <section id="price-container">
-                                <span>R$</span><span class="new-cust"> 44,30</span>
-                            </section>
-                            <button class="copy-price" title="Copiar texto">
+            <div class="right-alignment">
+                <div class="container-messages">
+                    <div class="card-messages">
+                        <span>Mensagem</span>
+                        <div id="message">
+                            <span class="message-type-impost">Clique em calcular</span>
+                            <button class="copy-message" title="Copiar texto">
                                 <i class="ph ph-clipboard"></i>
                             </button>
                         </div>
-                </div>
-
-                <div class="card-messages">
-                    <span>Mensagem</span>
-                    <div id="message">
-                        <span class="message-type-impost" >Adicionado R$ 2,15 de IPI</span>
-                        <button class="copy-message" title="Copiar texto">
-                            <i class="ph ph-clipboard"></i>
-                        </button>
                     </div>
+                    <div class="card-messages">
+                        <span>Novo valor de custo</span>
+                            <div id="new-value">
+                                <section id="price-container">
+                                    <span>R$</span><span class="new-cust"> 44,30</span>
+                                </section>
+                                <button class="copy-price" title="Copiar texto">
+                                    <i class="ph ph-clipboard"></i>
+                                </button>
+                            </div>
+                    </div>
+                    <div class="card-messages">
+                        <span>Valor de venda recomendado</span>
+                        <div id="message">
+                            <span class="new-sale-value">Clique em calcular</span>
+                            <button class="copy-sale-value" title="Copiar texto">
+                                <i class="ph ph-clipboard"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-actions">
+                    <button id="reset">
+                        <i class="ph ph-broom"></i>
+                        Reiniciar
+                    </button>
+                    <button id="new-impost">
+                        <i class="ph ph-arrows-clockwise"></i>
+                        Alterar imposto
+                    </button>
+                </div>
+            </div>
+
+            <div class="console">
+                <div class="title-console">
+                    <i class="ph ph-arrow-down"></i>
+                    <span>Sem arredondamento</span>
+                </div>
+                <div class="values-console">
+                    <div id="console-margin"></div>
+                    <div id="console-cust"></div>
+                    <div id="value-margin"></div>
                 </div>
             </div>
         </div>
