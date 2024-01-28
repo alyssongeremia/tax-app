@@ -44,7 +44,7 @@ sendValues.addEventListener('click', (event) => {
 
     //adiciona a frase do console
     const valueMarginConsole = document.querySelector('#value-margin')
-    valueMarginConsole.innerHTML = `<span>Valor da margem:  ${valueMargin}</span>`
+    valueMarginConsole.innerHTML = `<span>Valor da margem:  <span class="console-color">${valueMargin}</span></span>`
     console.log(`Margem sem arredondamento: ${valueMargin}`)
 
     valorFinal(valueMargin, finalCust)
@@ -62,14 +62,33 @@ sendValues.addEventListener('click', (event) => {
         messageImpost.innerText = `Adicionado R$ ${unitCost} de Frete`
     }
 
+    //animacao de click
+    const containerAnimation = document.querySelector('.container-messages')
+    const consoleAnimation = document.querySelector('.console')
+
+    function animationsMessage() {
+        containerAnimation.classList.add('enter')
+        consoleAnimation.classList.add('enter')
+    }
+
+    animationsMessage()
+
+    setTimeout(offAnimation, 500)
+
+    function offAnimation() {
+        containerAnimation.classList.remove('enter')
+        consoleAnimation.classList.remove('enter')
+    }
+
+
 })
 
 function somaMargem(marginFormated, finalCust) {
     const consoleMargem = document.querySelector('#console-margin')
     const consoleCust = document.querySelector('#console-cust')
     let finalCustFormated = Number(finalCust)
-    consoleMargem.innerHTML = `<span>Margem: ${marginFormated}</span>`
-    consoleCust.innerHTML = `<span> Custo final: ${finalCustFormated}</span>`
+    consoleMargem.innerHTML = `<span>Margem: <span class="console-color">${marginFormated}</span></span>`
+    consoleCust.innerHTML = `<span> Custo final: <span class="console-color">${finalCustFormated}</span></span>`
     return valueMargin = (marginFormated * finalCustFormated)
 }
 
@@ -125,6 +144,32 @@ copySaleValue.addEventListener('click', () => {
     openModal()
     setTimeout(closeModal, 2200)
 })
+
+//menu de navegacao
+const btnOpemMenu = document.querySelector('.open-menu')
+const btnCloseMenu = document.querySelector('.close-menu')
+const menu = document.querySelector('.links')
+
+btnOpemMenu.addEventListener('click', () => {
+    openMenu()
+})
+
+btnCloseMenu.addEventListener('click', () => {
+    closeMenu()
+})
+
+function openMenu() {
+    menu.classList.remove('hidden')
+    btnCloseMenu.classList.remove('hidden')
+    btnOpemMenu.classList.add('hidden')
+}
+
+function closeMenu() {
+    menu.classList.add('hidden')
+    btnCloseMenu.classList.add('hidden')
+    btnOpemMenu.classList.remove('hidden')
+}
+
 
 
 

@@ -13,28 +13,31 @@
 </head>
 <body>
     <header>
-        <span>
-            Links úteis
-            <i class="ph ph-caret-right"></i>
-        </span>
-        <a href="https://www.nfe.fazenda.gov.br/portal/consultaRecaptcha.aspx?tipoConsulta=resumo&tipoConteudo=7PhJ+gAVw2g=" target="_blank">Consultar NF</a>
-        <a href="https://calculade.net/calculadora-de-arredondamento" target="_blank">Arredondar n°</a>
-        <a href="https://www.invertexto.com/converter-maiusculas-minusculas" target="_blank">Converter letras</a>
+        <button>
+            <i class="ph ph-list open-menu" title="Abrir Menu"></i>
+            <i class="ph ph-x close-menu hidden" title="Fechar Menu"></i>
+        </button>
+        
+        <div class="links hidden">
+            <a href="https://www.nfe.fazenda.gov.br/portal/consultaRecaptcha.aspx?tipoConsulta=resumo&tipoConteudo=7PhJ+gAVw2g=" target="_blank">Consultar NF</a>
+            <a href="https://calculade.net/calculadora-de-arredondamento" target="_blank">Arredondar n°</a>
+            <a href="https://www.invertexto.com/converter-maiusculas-minusculas" target="_blank">Converter letras</a>
+        </div>
     </header>
 
     <main>
         <div class="container page">
 
-            <div id="taxes">
-                <label for="type-impost">Selecione o tipo de imposto</label>
-                <select id="type-impost">
-                    <option value="ipi">IPI</option>
-                    <option value="icms-st">ST</option>
-                    <option value="frete">Frete</option>
-                </select>
-            </div>
             <form>
                 <div class="calculator">
+                    <div id="taxes">
+                        <label for="type-impost">Tipo de custo</label>
+                        <select id="type-impost">
+                            <option value="ipi">IPI</option>
+                            <option value="icms-st">ST</option>
+                            <option value="frete">Frete</option>
+                        </select>
+                    </div>
                     <div>
                         <label for="note-value">Valor total na NF / Sefaz</label>
                         <input id="note-value" type="number" placeholder="Valor total de ipi, st ou frete">
@@ -63,7 +66,7 @@
                         <span>Mensagem</span>
                         <div id="message">
                             <span class="message-type-impost">Clique em calcular</span>
-                            <button class="copy-message" title="Copiar texto">
+                            <button class="copy-message" title="Copiar mensagem">
                                 <i class="ph ph-clipboard"></i>
                             </button>
                         </div>
@@ -74,16 +77,16 @@
                                 <section id="price-container">
                                     <span>R$</span><span class="new-cust"> 44,30</span>
                                 </section>
-                                <button class="copy-price" title="Copiar texto">
+                                <button class="copy-price" title="Copiar valor de custo">
                                     <i class="ph ph-clipboard"></i>
                                 </button>
                             </div>
                     </div>
                     <div class="card-messages">
                         <span>Valor de venda recomendado</span>
-                        <div id="message">
+                        <div id="message" class="animation-enter">
                             <span class="new-sale-value">Clique em calcular</span>
-                            <button class="copy-sale-value" title="Copiar texto">
+                            <button class="copy-sale-value" title="Copiar valor de venda">
                                 <i class="ph ph-clipboard"></i>
                             </button>
                         </div>
@@ -96,7 +99,7 @@
                     </button>
                     <button id="new-impost">
                         <i class="ph ph-arrows-clockwise"></i>
-                        Alterar imposto
+                        Alterar custo
                     </button>
                 </div>
             </div>
