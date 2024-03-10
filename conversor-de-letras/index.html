@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles/conversor.css">
+    <link rel="shortcut icon" href="../assets/favicon-new.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/favicon-new.png" type="image/png">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <title>App Converter - Conversor de letras</title>
+</head>
+<body>
+    <header>
+        <button>
+            <i class="ph ph-list open-menu" title="Abrir Menu"></i>
+            <i class="ph ph-x close-menu hidden" title="Fechar Menu"></i>
+        </button>
+        
+        <div class="links hidden">
+            <a href="../">Página Inicial</a>
+            <a href="https://www.nfe.fazenda.gov.br/portal/consultaRecaptcha.aspx?tipoConsulta=resumo&tipoConteudo=7PhJ+gAVw2g=" target="_blank">Consultar NF</a>
+            <a href="https://calculade.net/calculadora-de-arredondamento" target="_blank">Arredondar número</a>
+            <a href="#" id="btn-live">Youtube</a>
+        </div>
+    </header>
+
+    <main>
+        <div id="app-converter">
+            <div class="text-to-convert">
+                <form>
+                    <div>
+                        <label for="textToConvert" class="title">Digite ou cole o texto no campo abaixo</label>
+                        <textarea name="Texto para conversão" id="textToConvert"></textarea>
+                    </div>
+                    <div>
+                        <label for="tipe-letter" class="title">Converter para</label>
+                        <select name="Selecione o tipo de conversão" id="tipe-letter">
+                            <option value="uppercase">Maiúsculas</option>
+                            <option value="lowercase">Minúsculas</option>
+                            <option value="capitalize">Primeira letra</option>
+                        </select>
+                        <button id="sendText" type="submit">Converter</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="resultText">
+                <span class="title">Resultado</span>
+                <div id="textConverted" class="text-converted">
+                    <div id="inner-text-converted">
+                    </div>
+                </div>
+                <div class="copy-text-converted">
+                    <button title="Copiar texto" class="btn-copy">
+                        <i class="ph ph-clipboard icon-copy">
+                            <span>Copiar texto</span>
+                        </i>
+                        <i class="ph ph-check-circle hidden icon-copied">
+                            <span>Copiado</span>
+                        </i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal-alert hidden">
+        <span>Digite algo para converter</span>
+    </div>
+
+    <section class="live-youtube hidden">
+        <span class="close-live"></span>
+    </section>
+
+    <script src="../js/live-youtube.js"></script>
+    <script src="../js/converter.js"></script>
+    <script src="../js/global.js"></script>
+</body>
+</html>

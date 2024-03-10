@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/conversor.css">
     <link rel="shortcut icon" href="assets/favicon-new.png" type="image/png">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <title>Tax App - Aplicativo para calcular taxas</title>
@@ -20,8 +21,9 @@
         
         <div class="links hidden">
             <a href="https://www.nfe.fazenda.gov.br/portal/consultaRecaptcha.aspx?tipoConsulta=resumo&tipoConteudo=7PhJ+gAVw2g=" target="_blank">Consultar NF</a>
-            <a href="https://calculade.net/calculadora-de-arredondamento" target="_blank">Arredondar n°</a>
-            <a href="https://www.invertexto.com/converter-maiusculas-minusculas" target="_blank">Converter letras</a>
+            <a href="./conversor-de-letras/">Conversor de letras</a>
+            <a href="https://calculade.net/calculadora-de-arredondamento" target="_blank">Arredondar número</a>
+            <a href="#" id="btn-live">Youtube</a>
         </div>
     </header>
 
@@ -32,7 +34,7 @@
                 <div class="calculator">
                     <div id="taxes">
                         <label for="type-impost">Tipo de custo</label>
-                        <select id="type-impost">
+                        <select id="type-impost" name="tipeCust">
                             <option value="ipi">IPI</option>
                             <option value="icms-st">ST</option>
                             <option value="frete">Frete</option>
@@ -40,11 +42,11 @@
                     </div>
                     <div>
                         <label for="note-value">Valor total na NF / Sefaz</label>
-                        <input id="note-value" type="number" placeholder="Valor total de ipi, st ou frete">
+                        <input id="note-value" type="number" name="custNote" placeholder="Valor total de ipi, st ou frete">
                     </div>
                     <div>
                         <label for="amount-acquired">Quantidade de itens</label>
-                        <input id="amount-acquired" type="number" placeholder="Quantia presente na nota">
+                        <input id="amount-acquired" type="number" placeholder="Quantia presente na nota" step="5">
                     </div>
                     <div>
                         <label for="last-cost">Último custo do produto</label>
@@ -52,7 +54,7 @@
                     </div>
                     <div>
                         <label for="margin">Margem de venda <span><i class="ph ph-percent"></i></span></label>
-                        <input id="margin" type="number" placeholder="45" value="45">
+                        <input id="margin" type="number" placeholder="45" value="45" step="5">
                     </div>
                     <button type="submit" class="send-values" title="Calcular">
                         Calcular
@@ -93,11 +95,12 @@
                     </div>
                 </div>
                 <div class="container-actions">
-                    <button id="reset">
+                    <span>Acesso Rápido</span>
+                    <button id="reset" title="Limpar os dados do formulário">
                         <i class="ph ph-broom"></i>
                         Reiniciar
                     </button>
-                    <button id="new-impost">
+                    <button id="new-impost" title="Alterar tipo de custo">
                         <i class="ph ph-arrows-clockwise"></i>
                         Alterar custo
                     </button>
@@ -118,11 +121,17 @@
         </div>
     </main>
 
+    <section class="live-youtube hidden page">
+        <i class="ph ph-x close-live" title="Fechar live"></i>
+    </section>
+
     <dialog class="hidden">
         <i class="ph ph-check-circle"></i>
         <span>Copiado</span>
     </dialog>
 
-    <script src="./main.js"></script>
+    <script src="./js/global.js"></script>
+    <script src="./js/live-youtube.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>

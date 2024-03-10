@@ -31,6 +31,19 @@ sendValues.addEventListener('click', (event) => {
     const margin = document.querySelector('#margin')
     const newSaleValue = document.querySelector(".new-sale-value")
 
+    //seleciona inputs ao clicar
+    noteValue.addEventListener('click', () => {
+        noteValue.select()
+    })
+
+    amountAcquired.addEventListener('click', () => {
+        amountAcquired.select()
+    })
+
+    lastCost.addEventListener('click', () => {
+        lastCost.select()
+    })
+
     //pega os valores das variaveis
     const noteValueFormated = Number(noteValue.value)
     const amountAcquiredFormated = Number(amountAcquired.value)
@@ -96,20 +109,24 @@ function valorFinal(valueMargin, finalCust) {
     return saleValue = (valueMargin + finalCust).toFixed(2).replace(".", ",")
 }
 
-//resetar
-function reset() {
+// acesso rapido
+const formulario = document.querySelector('form')
+
+function resetForm() {
     const btnReset = document.querySelector("#reset")
 
     btnReset.addEventListener('click', ()=> {
-        location.reload()
+        formulario.reset()
+        formulario.custNote.select()
     })
 }
 
-reset()
+resetForm()
 
+//alterar tipo de custo
 function alternateImpost() {
     btnImpost.addEventListener('click', ()=> {
-        typeImpost.focus()
+        formulario.tipeCust.focus()
     })
 }
 
@@ -144,35 +161,3 @@ copySaleValue.addEventListener('click', () => {
     openModal()
     setTimeout(closeModal, 2200)
 })
-
-//menu de navegacao
-const btnOpemMenu = document.querySelector('.open-menu')
-const btnCloseMenu = document.querySelector('.close-menu')
-const menu = document.querySelector('.links')
-
-btnOpemMenu.addEventListener('click', () => {
-    openMenu()
-})
-
-btnCloseMenu.addEventListener('click', () => {
-    closeMenu()
-})
-
-function openMenu() {
-    menu.classList.remove('hidden')
-    btnCloseMenu.classList.remove('hidden')
-    btnOpemMenu.classList.add('hidden')
-}
-
-function closeMenu() {
-    menu.classList.add('hidden')
-    btnCloseMenu.classList.add('hidden')
-    btnOpemMenu.classList.remove('hidden')
-}
-
-
-
-
-
-
-
