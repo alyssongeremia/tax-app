@@ -1,0 +1,109 @@
+form {
+  min-width: 42rem;
+  background-color: #181b20;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding: 1.6rem 2.4rem;
+  margin-top: 1.6rem;
+  margin-bottom: 3.2rem;
+  border-radius: 8px;
+  color: #e9e9ea;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+}
+
+form label { 
+  font-size: 1.6rem;
+}
+
+form input {
+  padding: .8rem;
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+input::placeholder {
+  font-size: 1.4rem;
+}
+
+form button {
+  font-family: 'Poppins',sans-serif;
+  font-weight: normal;
+  font-size: 1.6rem;
+  border: none;
+  background-color: #5c5bc7;
+  color: #e9e9ea;
+  padding: 1.2rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 200ms ease-out;
+}
+
+form button:hover {
+  background-color: #5251b1;
+}
+
+#header-pdf {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  justify-content: end;
+  padding: 0 0 .8rem 0;
+}
+
+#header-pdf button {
+  border: 0;
+  background-color: #5c5bc7;
+  color: #e9e9ea;
+  padding: .8rem 1.6rem;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  border-radius: 4px;
+  transition: all 200ms ease-out;
+}
+
+#header-pdf button:hover {
+  background-color: #5251b1;
+}
+
+#header-pdf i {
+  font-size: 1.8rem;
+}
+
+#screen {
+  max-height: 24rem;
+  background-color: #e9e9ea;
+  max-width: 850px;
+  display: grid;
+  grid-template-areas: "A B C";
+  gap: .8rem;
+
+  padding: .8rem;
+
+  overflow-y: auto;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin-bottom: 2.4rem;
+}
+
+.tag {
+  font-size: 1.35rem;
+  padding: .8rem;
+  border: 1px solid #a0a1a2;
+
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+  transition: all 400ms ease-out;
+}
+
+.tag .title {
+  max-width: 30rem;
+}

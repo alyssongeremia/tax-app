@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../assets/favicon-new.png" type="image/x-icon">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../styles/etiquetas.css">
+  <link rel="stylesheet" href="printer.css" media="print">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <title>Gerar Etiquetas</title>
+</head>
+<body>
+  <header>
+    <button>
+        <i class="ph ph-list open-menu" title="Abrir Menu"></i>
+        <i class="ph ph-x close-menu hidden" title="Fechar Menu"></i>
+    </button>
+    
+    <div class="links hidden">
+        <a href="../">Página Inicial</a>
+        <a href="https://www.nfe.fazenda.gov.br/portal/consultaRecaptcha.aspx?tipoConsulta=resumo&tipoConteudo=7PhJ+gAVw2g=" target="_blank">Consultar NF</a>
+        <a href="../conversor-de-letras/">Conversor de letras</a>
+        <a href="https://calculade.net/calculadora-de-arredondamento" target="_blank">Arredondar número</a>
+        <a href="#" id="btn-live">Youtube</a>
+    </div>
+  </header>
+
+  <form>
+    <div>
+      <label for="name-product">Nome</label>
+      <input type="text" id="name-product" placeholder="Digite o nome do produto">
+    </div>
+
+    <div>
+      <label for="code-product">Código</label>
+      <input type="text" id="code-product" placeholder="Digite o Código do produto">
+    </div>
+
+    <div>
+      <label for="value-product">Valor</label>
+      <input type="text" id="value-product" placeholder="Digite o valor R$">
+    </div>
+
+    <div class="hidden">
+      <label for="amount-tag">Quantia de etiquetas</label>
+      <input type="text" id="amount-tag" placeholder="Quantia de etiquetas">
+    </div>
+
+    <button type="submit" id="generate">Gerar etiqueta</button>
+  </form>
+
+  <div>
+    <div id="header-pdf">
+      <button id="clear-screen">
+        <i class="ph ph-broom"></i>
+        limpar
+      </button>
+      <button id="generate-pdf">
+        <i class="ph ph-printer"></i>
+        Imprimir
+      </button>
+    </div>
+    <div id="screen" class="pdf"></div>
+  </div>
+
+  <section class="live-youtube hidden page">
+    <i class="ph ph-x close-live" title="Fechar live"></i>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js" integrity="sha384-THVO/sM0mFD9h7dfSndI6TS0PgAGavwKvB5hAxRRvc0o9cPLohB0wb/PTA7LdUHs" crossorigin="anonymous">
+  </script>
+  <script src="../js/etiquetas.js"></script>
+  <script src="../js/live-youtube.js"></script>
+  <script src="../js/global.js"></script>
+</body>
+</html>
