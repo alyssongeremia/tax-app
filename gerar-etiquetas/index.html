@@ -33,17 +33,18 @@
   <form>
     <div>
       <label for="name-product">Nome</label>
-      <input type="text" id="name-product" placeholder="Digite o nome do produto">
+      <input type="text" id="name-product" placeholder="Nome do produto">
     </div>
 
-    <div>
-      <label for="code-product">Código</label>
-      <input type="text" id="code-product" placeholder="Digite o Código do produto">
-    </div>
-
-    <div>
-      <label for="value-product">Valor</label>
-      <input type="text" id="value-product" placeholder="Digite o valor R$">
+    <div class="flex-row">
+      <div>
+        <label for="code-product">Código</label>
+        <input type="text" id="code-product" placeholder="Código do produto">
+      </div>
+      <div>
+        <label for="value-product">Valor</label>
+        <input type="text" id="value-product" placeholder="R$">
+      </div>
     </div>
 
     <div class="hidden">
@@ -56,9 +57,10 @@
 
   <div>
     <div id="header-pdf">
+      <span class="number-tags">N° de etiquetas: <strong id="number-tags">0</strong></span>
       <button id="clear-screen">
         <i class="ph ph-broom"></i>
-        limpar
+        Reiniciar
       </button>
       <button id="generate-pdf">
         <i class="ph ph-printer"></i>
@@ -69,11 +71,9 @@
   </div>
 
   <section class="live-youtube hidden page">
-    <i class="ph ph-x close-live" title="Fechar live"></i>
+    <i class="ph ph-x" id="close-live" title="Fechar live" onclick="removeLive()"></i>
   </section>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js" integrity="sha384-THVO/sM0mFD9h7dfSndI6TS0PgAGavwKvB5hAxRRvc0o9cPLohB0wb/PTA7LdUHs" crossorigin="anonymous">
-  </script>
   <script src="../js/etiquetas.js"></script>
   <script src="../js/live-youtube.js"></script>
   <script src="../js/global.js"></script>

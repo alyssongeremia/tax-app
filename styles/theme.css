@@ -1,0 +1,20 @@
+:root {
+  --bg-body: #111316;
+  --bg-200: #292b2d;
+  --bg-300: #181b20;
+  --bg-button: #5c5bc7;
+  --bg-button-400: #0e1013;
+  --bg-input: #e8e8e9;
+  --bg-hover: #5251b1;
+  --bg-alert: #DB2B39;
+  --bg-hover-dark: #111316;
+  --bg-hover-dark-light: #414245;
+
+  --color-text-200: #e9e9ea;
+  --color-text-300: #bbbbbc;
+  --color-text-400: #b8b8b9;
+  --color-text-blue: #0197F6;
+  --color-text-logo: #FFFFFF;
+
+  font-size: 62.5%;
+}

@@ -6,6 +6,9 @@ const name = document.querySelector('#name-product')
 const code = document.querySelector('#code-product')
 const sale = document.querySelector('#value-product')
 
+const tagsScreen = document.querySelector('#number-tags')
+let tags = 0
+
 name.addEventListener('click', () => {
   name.select()
 })
@@ -22,22 +25,21 @@ btnClearScreen.addEventListener('click', () => {
   clearScreen()
 })
 
+name.select()
+
 function clearScreen() {
-  const screen = document.querySelector('#screen')
+  let screen = document.querySelector('#screen')
 
   if(confirm('Excluir todas as etiquetas?') == true) {
     screen.innerHTML = ``
+    const formInputs = document.querySelector('form')
+    formInputs.reset()
+    name.select()
+    tags = 0
+    tagsScreen.innerHTML = tags
   } else {
     return
   }
-}
-
-function generatePdf( name, code,sale, text) {
-  let doc = new jsPDF()
-  doc.text(`${name.value}`, 10, 10)
-  doc.text(`Código: ${code.value}`, 10, 20)
-  doc.text(`Valor: R$ ${sale.value}`, 10, 30 )
-  doc.save( name.value + '.pdf')
 }
 
 btnGenerateTag.addEventListener('click', (event) => {
@@ -56,8 +58,13 @@ btnGenerateTag.addEventListener('click', (event) => {
       <span>Valor: R$ ${sale.value}</span>
     </div>
   `
+
+  tags = tags +1
+  tagsScreen.innerHTML = String(tags).padStart(2, '0')
 })
 
 btnGeneratePdf.addEventListener('click', () => {
+  document.title = `Etiquetas - ${tags}`
   window.print()
+  document.title = 'Gerar etiquetas'
 })

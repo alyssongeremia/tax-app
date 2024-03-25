@@ -1,5 +1,10 @@
 body {
   align-items: start;
+  margin: 0;
+  padding-bottom: 10px;
+  padding-top: 0;
+  background-color: #fff;
+  color: #000;
 }
 
 header, form, #header-pdf { 
@@ -17,5 +22,9 @@ header, form, #header-pdf {
 }
 
 ::-webkit-scrollbar {
+  width: 0;
+}
+
+#screen::-webkit-scrollbar {
   width: 1px;
 }

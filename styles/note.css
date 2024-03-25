@@ -1,0 +1,51 @@
+@import url(../styles/theme.css);
+
+.note-wrapper {
+  position: fixed;
+  top: 10rem;
+  left: 3.2rem;
+}
+
+.note-wrapper button {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.4rem;
+  border: 0;
+  cursor: pointer;
+  background-color: var(--bg-button-400);
+  color: var(--color-text-300);
+  padding: 1rem;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+#notes-area {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  padding: .8rem;
+  margin-top: .8rem;
+  background-color: var(--bg-input);
+  color: var(--bg-body);
+}
+
+.area-wrapper {
+  display: flex;
+  align-items: self-start;
+  gap: .4rem;
+  animation: appear 200ms ease-out;
+}
+
+.area-wrapper .ph-x {
+  font-size: 1.9rem;
+  color: var(--color-text-200);
+  padding: .8rem;
+  border-radius: 100%;
+  transition: all 200ms ease-out;
+  cursor: pointer;
+}
+
+.area-wrapper .ph:hover {
+  background-color: var(--bg-300);
+}
