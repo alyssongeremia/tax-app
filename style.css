@@ -105,6 +105,7 @@ header a:hover {
 main {
     color: var(--color-text-200);
     padding-top: 3.2rem;
+    padding-bottom: 3.2rem;
 }
 
 main .container {
@@ -443,6 +444,14 @@ iframe {
     max-width: 35rem;
     height: 19.8rem;
     border-radius: 10px;
+}
+
+body::-webkit-scrollbar {
+    width: .5rem;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--bg-200);
 }
 
 @keyframes exit {

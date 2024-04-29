@@ -28,3 +28,7 @@ header, form, #header-pdf {
 #screen::-webkit-scrollbar {
   width: 1px;
 }
+
+.tag .ph {
+  display: none;
+}

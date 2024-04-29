@@ -92,8 +92,6 @@ sendValues.addEventListener('click', (event) => {
         containerAnimation.classList.remove('enter')
         consoleAnimation.classList.remove('enter')
     }
-
-
 })
 
 function somaMargem(marginFormated, finalCust) {

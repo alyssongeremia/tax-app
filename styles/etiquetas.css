@@ -120,7 +120,7 @@ strong {
 #screen {
   max-height: 44rem;
   background-color: #e9e9ea;
-  max-width: 850px;
+  min-width: 850px;
   display: grid;
   grid-template-areas: "A B C";
   gap: 1px;
@@ -140,8 +140,32 @@ strong {
   gap: .8rem;
   box-shadow: 0 0 0 1px #a0a1a2;
   transition: all 400ms ease-out;
+  position: relative;
+}
+
+.tag .ph {
+  font-size: 1.9rem;
+  padding: .4rem;
+  position: absolute;
+  bottom: .4rem;
+  right: .4rem;
+  cursor: pointer;
+  transition: all 200ms ease-out;
+  border-radius: 4px;
+}
+
+.tag .ph:hover {
+  color: var(--bg-alert);
 }
 
 .tag .title {
   max-width: 30rem;
+}
+
+.strong {
+  font-weight: 500;
+}
+
+#tag4 {
+  background: var(--bg-button);
 }
